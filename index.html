@@ -99,20 +99,6 @@
                     }
                 }
             };
-
-            /*
-            // Fonction appelée quand la page est chargée
-            window.onload = function () {
-                sendCommand('démarre');
-            };
-    
-            // Fonction appelée lorsque la souris passe sur la page
-            function initMouseOver() {
-                document.body.onmouseover = function () {
-                    sendCommand('démarre');
-                };
-            }
-            */
         };
 
         function sendCommand(command) {
@@ -120,7 +106,6 @@
             const message = JSON.stringify({ command: command });
             socket.send(message);
         }
-
     </script>
 </body>
 
