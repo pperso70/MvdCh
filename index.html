@@ -95,26 +95,27 @@
                     }
                 }
             };
-        };
-        /*
-        // Fonction appelée quand la page est chargée
-        window.onload = function () {
-            sendCommand('démarre');
-        };
 
-        // Fonction appelée lorsque la souris passe sur la page
-        function initMouseOver() {
-            document.body.onmouseover = function () {
+            /*
+            // Fonction appelée quand la page est chargée
+            window.onload = function () {
                 sendCommand('démarre');
             };
-        }
-        */
+    
+            // Fonction appelée lorsque la souris passe sur la page
+            function initMouseOver() {
+                document.body.onmouseover = function () {
+                    sendCommand('démarre');
+                };
+            }
+            */
 
-        function sendCommand(command) {
-            console.log("Envoi de la commande : " + command);
-            const message = JSON.stringify({ command: command });
-            socket.send(message);
-        }
+            function sendCommand(command) {
+                console.log("Envoi de la commande : " + command);
+                const message = JSON.stringify({ command: command });
+                socket.send(message);
+            }
+        };
     </script>
 </body>
 
