@@ -48,6 +48,9 @@
     <img id="cameraImage" alt="Image de la caméra">
 
     <script>
+
+        let socket;
+
         window.onload = function () {
             //const socket = new WebSocket('wss://flash-wild-ketchup.glitch.me');
             const socket = new WebSocket('wss://mvdch.glitch.me');
@@ -109,13 +112,14 @@
                 };
             }
             */
-
-            function sendCommand(command) {
-                console.log("Envoi de la commande : " + command);
-                const message = JSON.stringify({ command: command });
-                socket.send(message);
-            }
         };
+        
+        function sendCommand(command) {
+            console.log("Envoi de la commande : " + command);
+            const message = JSON.stringify({ command: command });
+            socket.send(message);
+        }
+
     </script>
 </body>
 
