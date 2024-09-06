@@ -48,13 +48,15 @@
     <img id="cameraImage" alt="Image de la caméra">
 
     <script>
-        //const socket = new WebSocket('wss://flash-wild-ketchup.glitch.me');
-        const socket = new WebSocket('wss://mvdch.glitch.me');
+        window.onload = function () {
+            //const socket = new WebSocket('wss://flash-wild-ketchup.glitch.me');
+            const socket = new WebSocket('wss://mvdch.glitch.me');
 
-        socket.onopen = function (e) {
-            console.log("Connecté au WebSocket");
+            socket.onopen = function (e) {
+                sendCommand('démarre');
+                console.log("Connecté au WebSocket");
+            };
         };
-
         socket.onmessage = function (event) {
             if (event.data.length < 100) {
                 //if (typeof event.data === 'string') {
@@ -93,7 +95,8 @@
                 }
             }
         };
-
+        
+        /*
         // Fonction appelée quand la page est chargée
         window.onload = function () {
             sendCommand('démarre');
@@ -105,7 +108,7 @@
                 sendCommand('démarre');
             };
         }
-
+        */
 
         function sendCommand(command) {
             console.log("Envoi de la commande : " + command);
